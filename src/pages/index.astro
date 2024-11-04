@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CourseCard from '../components/CourseCard.astro';
+
+const featuredCourses = [
+  {
+    id: 1,
+    title: "Full-Stack Laravel React",
+    description: "Learn to build modern web applications with Laravel and React",
+    image: "https://source.unsplash.com/800x600/?coding",
+    price: 850000,
+    category: "Web Development",
+    level: "Intermediate"
+  },
+  {
+    id: 2,
+    title: "UI/UX Design Mastery",
+    description: "Master the art of designing beautiful and functional interfaces",
+    image: "https://source.unsplash.com/800x600/?design",
+    price: 750000,
+    category: "Design",
+    level: "Beginner"
+  },
+  {
+    id: 3,
+    title: "Flutter Mobile Development",
+    description: "Build cross-platform mobile apps with Flutter",
+    image: "https://source.unsplash.com/800x600/?mobile",
+    price: 950000,
+    category: "Mobile Development",
+    level: "Advanced"
+  }
+];
+---
+
+<Layout title="LearnCode - Learn Programming and Design">
+  <main>
+    <!-- Hero Section -->
+    <div class="bg-primary">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center">
+          <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+            Learn Programming and Design
+          </h1>
+          <p class="mt-3 max-w-md mx-auto text-base text-gray-200 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+            Start your journey in tech with industry experts. Get practical skills and real-world experience.
+          </p>
+          <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+            <div class="rounded-md shadow">
+              <a href="/courses" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
+                Browse Courses
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Courses -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8">Featured Courses</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {featuredCourses.map((course) => (
+          <CourseCard course={course} />
+        ))}
+      </div>
+    </div>
+
+    <!-- Categories Section -->
+    <div class="bg-gray-50 py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Popular Categories</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <a href="/category/web-development" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-semibold text-gray-900">Web Development</h3>
+            <p class="text-sm text-gray-500 mt-1">20 Courses</p>
+          </a>
+          <a href="/category/mobile-development" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-semibold text-gray-900">Mobile Development</h3>
+            <p class="text-sm text-gray-500 mt-1">15 Courses</p>
+          </a>
+          <a href="/category/ui-ux-design" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-semibold text-gray-900">UI/UX Design</h3>
+            <p class="text-sm text-gray-500 mt-1">12 Courses</p>
+          </a>
+          <a href="/category/data-science" class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="text-lg font-semibold text-gray-900">Data Science</h3>
+            <p class="text-sm text-gray-500 mt-1">8 Courses</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
